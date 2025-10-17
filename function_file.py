@@ -27,3 +27,9 @@ def simpsonsrule(F,n,a,b):
     for i in range(2,n - 2,2):
         sum += 2 * F[i]
     return sum * width
+
+def optimal_integrator(F,n,a,b): #cant handle n lower than 4
+    if n//2 == 0:
+        return simpsonsrule(F,n,a,b)
+    else:
+        return trapizoidrule(F,n,a,b)
